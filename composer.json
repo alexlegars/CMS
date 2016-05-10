@@ -1,0 +1,15 @@
+{
+    "name": "alexandrelegars/cms",
+    "authors": [
+        {
+            "name": "alexlegars",
+            "email": "alexlegars@gmail.com"
+        }
+    ],
+    "autoload" : {
+      "psr-4" : {
+        "Model\\" : "Model/",
+        "Controller\\" : "Controller/"
+      }
+    }
+}
