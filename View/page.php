@@ -1,4 +1,4 @@
-ajout<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@ ajout<!DOCTYPE html>
     <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
 </head>
 <body role="document">
+<?=$nav?>
 <?=$page->body?>
 </body>
 </html>

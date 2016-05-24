@@ -46,11 +46,17 @@ class PageController
          $slug = 'teletubbies';
       }
       $page = $this->repository->getSlug($slug);
+      $nav = $this->getNav();
       if(!$page){
          include "View/404.php";
          return;
       }
       include "View/page.php";
    }
-
+   private function getNav()
+   {
+      ob_start();
+      include "View/nav.php";
+      return ob_get_clean();
+   }
 }
