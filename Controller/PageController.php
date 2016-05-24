@@ -55,8 +55,11 @@ class PageController
    }
    private function getNav()
    {
+      //capture de l'output et placement dans l output buufer (ob)
       ob_start();
       include "View/nav.php";
+
+      //return du output buffer et nettoyage du buffer
       return ob_get_clean();
    }
 }

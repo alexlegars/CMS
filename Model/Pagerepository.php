@@ -27,7 +27,12 @@ class PageRepository
         $sql = "
         SELECT 
           `id`, 
-          `slug`, 
+          `slug`,
+          `h1`,
+          `image`,
+          `span_class`,
+          `span_text`,
+          `iframe`,
           `body`, 
           `title`
         FROM 
