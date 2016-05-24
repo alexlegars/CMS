@@ -1,37 +1,38 @@
 <?php
-
 namespace Model;
-
 
 /**
  * Class Pagerepository
- * @author Alexandre Le Gars <alexlegars@gmail.com>
+ * @author Yann Le Scouarnec <yann.le-scouarnec@hetic.net>
  * @package Model
  */
-class PageRepository{
+class PageRepository
+{
 
     /**
      * @var \PDO
      */
     private $PDO;
+
     public function __construct(\PDO $PDO)
     {
         $this->PDO = $PDO;
     }
+
     /**
      * @param int $id
      */
     public function getSlug($slug)
     {
         $sql = "
-        SELECT
-          `id`,
-          `slug`,
-          `body`,
+        SELECT 
+          `id`, 
+          `slug`, 
+          `body`, 
           `title`
-        FROM
-          `page`
-        WHERE
+        FROM 
+          `page` 
+        WHERE 
           `slug` = :slug
         ";
         $stmt = $this->PDO->prepare($sql);

@@ -1,7 +1,7 @@
 <?php
 require_once "vendor/autoload.php";
 try{
-    $pdo = new \PDO("mysql:host=localhost;dbname=kandt","root","root");
+    $pdo = new \PDO("mysql:host=localhost;dbname=cours","root","root");
     $pdo->query('set NAMES \'utf8\'');
 } catch(PDOException $e){
     die($e->getMessage());
