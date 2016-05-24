@@ -3,7 +3,7 @@ namespace Model;
 
 /**
  * Class Pagerepository
- * @author Yann Le Scouarnec <yann.le-scouarnec@hetic.net>
+ * @author Alexandre Le Gars <alexlegars@gmail.com>
  * @package Model
  */
 class PageRepository

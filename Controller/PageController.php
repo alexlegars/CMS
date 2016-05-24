@@ -5,7 +5,7 @@ use Model\Pagerepository;
 
 /**
  * Class PageController
- * @author Yann Le Scouarnec <yann.le-scouarnec@hetic.net>
+ * @author Alexandre Le Gars <alexlegars@gmail.com>
  * @package Controller
  */
 class PageController
