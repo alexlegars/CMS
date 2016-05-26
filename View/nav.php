@@ -5,9 +5,17 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.php?p=teletubbies">Teletubbies</a></li>
-                <li><a href="index.php?p=kittens">Kittens</a></li>
-                <li><a href="index.php?p=iron">Iron Maiden</a></li>
+                <?php
+                foreach($data as $une_page):
+                    $active = '';
+                    if($une_page->slug==$_GET['p']):
+                        $active = " class=\"active\"";
+                    endif;
+                ?>
+                <li <?=$active?>><a href="index.php?p=<?=$une_page->slug?>"><?=$une_page->title?></a></li>
+                <?php
+                endforeach;
+                ?>
             </ul>
         </div>
     </div>

@@ -57,6 +57,7 @@ class PageController
    {
       //capture de l'output et placement dans l output buufer (ob)
       ob_start();
+      $data = $this->repository->getAll();
       include "View/nav.php";
 
       //return du output buffer et nettoyage du buffer
