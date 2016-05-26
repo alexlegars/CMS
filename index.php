@@ -1,4 +1,5 @@
 <?php
+//inclusion Autoload Composer
 require_once "vendor/autoload.php";
 try{
     $pdo = new \PDO("mysql:host=localhost;dbname=kandt","root","root");
