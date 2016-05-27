@@ -46,6 +46,8 @@ class PageRepository
         return $stmt->fetchObject();
     }
 
+
+    // renvoie toutes le pages par le slug et title
     public function getAll()
     {
         $sql = "
