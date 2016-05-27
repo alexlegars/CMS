@@ -19,6 +19,12 @@ class PageController
 
    public function ajoutAction()
    {
+       if(count($_POST) === 0){
+           // formulaire
+       } else{
+           // traitement formulaiare
+           // sauvegarde de la nouvelle page
+       }
    }
 
    public function supprimerAction()
