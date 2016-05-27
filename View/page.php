@@ -13,7 +13,7 @@
         <h1><?=$page->h1?></h1>
         <?=$page->body?>
         <span class="<?=$page->span_class?>" ><?=$page->span_text?></span>
-        <iframe src="<?=$page->iframe?>"" frameborder="0"></iframe>
+        <iframe src="<?=$page->iframe?>" frameborder="0" width="600px" height="270px"></iframe>
     </div>
         <img class="img-thumbnail" alt="<?=$page->title?>" src="<?=$page->image?>" data-holder-rendered="true">
 </body>
