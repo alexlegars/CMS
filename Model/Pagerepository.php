@@ -65,4 +65,42 @@ class PageRepository
         }
         return $data;
     }
+
+    public function putAll()
+    {
+        $uploadimg = 'img/';
+        $tempdir = $_FILES['image']['tmp_name'];
+        move_uploaded_file($tempdir, $uploadimg . $_FILES['image']['name']);
+
+        $sql = "INSERT INTO
+        `page`
+        (
+            `slug`,
+            `h1`,
+            `span_text`,
+            `body`,
+            `title`,
+            `image`,
+        )
+        VALUES (
+            :slug,
+            :h1,
+            :span_text,
+            :body,
+            :title,
+            :image,
+        )
+        ";
+        $stmt = $this->PDO->prepare($sql);
+
+        $stmt->bindValue(':slug', $_POST["slug"]);
+        $stmt->bindValue(':h1', $_POST["h1"]);
+        $stmt->bindValue(':span_text', $_POST["span_text"]);
+        $stmt->bindValue(':body', $_POST["body"]);
+        $stmt->bindValue(':title', $_POST["title"]);
+        $stmt->bindValue(':image', $_FILES['image']['name']);
+
+        $stmt->execute();
+        return $this->PDO->lastInsertId();
+    }
 }
