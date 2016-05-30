@@ -7,12 +7,11 @@ if (isset($_GET['a'])){
     $action = $_GET['a'];
 }
 //$_GET['a'] = $_GET['a'] ?? '';
-
 $page = new \Controller\PageController($pdo);
 
-switch($_GET['a']){
-    case "ajouter":
-        $page->ajoutAction();
+switch($action){
+    case "detail":
+       // $page->detailsAction();
         break;
     case "lister":
     default:

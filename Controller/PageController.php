@@ -19,12 +19,13 @@ class PageController
 
    public function ajoutAction()
    {
-       if(count($_POST) === 0){
-           // formulaire
-       } else{
-           // traitement formulaiare
-           // sauvegarde de la nouvelle page
-       }
+      /* if(count($_POST) === 0){
+               // formulaire
+           } else{
+               // traitement formulaiare
+               // sauvegarde de la nouvelle page
+           }
+      */
    }
 
    public function supprimerAction()
@@ -42,7 +43,7 @@ class PageController
    public function listeAction()
    {
       $data = (array) $this->repository->getAll();
-      include "../View/admin/index.php";
+      include "View/admin/index.php";
    }
 /*
  *

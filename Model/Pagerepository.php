@@ -46,26 +46,24 @@ class PageRepository
         return $stmt->fetchObject();
     }
 
-
-    // renvoie toutes le pages par le slug et title
+    /**
+     * @return array liste des slugs et titles de toutes les pages
+     */
     public function getAll()
     {
         $sql = "
         SELECT
-            `id`,
-            `title`,
-            `slug`
+          `id`,
+          `slug`,
+          `title`
         FROM
-            `page`
-            ";
+          `page`
+        ";
         $stmt = $this->PDO->prepare($sql);
         $stmt->execute();
-        $data = [];
-        while($row = $stmt->fetchObject()){
-            $data[]= $row;
-        }
-        return $data;
+        return $stmt->fetchAll(\PDO::FETCH_OBJ);
     }
+
 
     public function putAll()
     {

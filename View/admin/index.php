@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Liste des pages</title>
-    <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="../../bootstrap/css/" rel="stylesheet">
-    <link href="../../bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../bootstrap/css/" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
     <style>
         body {
             padding-top: 70px;
@@ -26,8 +26,8 @@
     </div>
 </nav>
 <div class="container theme-showcase" role="main">
-    <h1>PAges</h1>
-    <a href="/admin/index.php?a=ajouter">+</a>
+    <h1>Pages</h1>
+    <a href="/admin/index.php?a=ajouter" style="font-size: 50px">+</a>
     <table class="table-bordered table-responsive table">
         <tr>
             <th>ID</th>
@@ -35,39 +35,20 @@
             <th>Titre</th>
             <th>Action</th>
         </tr>
-        <?php foreach ($data as $page): ?>
-        <tr>
-            <td><?=$page->id?></td>
-            <td><?=$page->slug?></td>
-            <td><?=$page->title?></td>
-            <td>
-                <a href="/admin/index.php?a=details&id=<?=$page->id?>">d</a>
-                <a href="/admin/index.php?a=modifier&id=<?=$page->id?>">m</a>
-                <a href="/admin/index.php?a=supprimer&id=<?=$page->id?>">-</a>
-            </td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>chatons</td>
-            <td>Kittens</td>
-            <td>
-                <a href="">d</a>
-                <a href="">m</a>
-                <a href="">-</a>
-            </td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>ironmaiden</td>
-            <td>Iron maiden</td>
-            <td>
-                <a href="">d</a>
-                <a href="">m</a>
-                <a href="">-</a>
-            </td>
-        </tr>
+        <?php foreach($data as $page):?>
+            <tr>
+                <td><?=$page->id?></td>
+                <td><?=$page->slug?></td>
+                <td><?=$page->title?></td>
+                <td>
+                    <a href="/admin/index.php?a=details&id=<?=$page->id?>">d</a>
+                    <a href="/admin/index.php?a=modifier&id=<?=$page->id?>">m</a>
+                    <a href="/admin/index.php?a=supprimer&id=<?=$page->id?>">-</a>
+                </td>
+            </tr>
+        <?php endforeach;?>
     </table>
-    <a href="">+</a>
+    <a href="/admin/index.php?a=ajouter" style="font-size: 50px">+</a>
 </div>
 </body>
 </html>
