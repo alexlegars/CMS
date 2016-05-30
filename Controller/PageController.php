@@ -19,6 +19,13 @@ class PageController
 
    public function ajoutAction()
    {
+      /* if(count($_POST) === 0){
+               // formulaire
+           } else{
+               // traitement formulaiare
+               // sauvegarde de la nouvelle page
+           }
+      */
    }
 
    public function supprimerAction()
@@ -35,8 +42,12 @@ class PageController
 
    public function listeAction()
    {
+      $data = (array) $this->repository->getAll();
+      include "View/admin/index.php";
    }
-
+/*
+ *
+ */
    public function displayAction()
    {
 //      $slug = $_GET['p'] ?? $_POST['p'] ?? 'teletubbies';
@@ -46,18 +57,29 @@ class PageController
          $slug = 'teletubbies';
       }
       $page = $this->repository->getSlug($slug);
+      // recup navigation
       $nav = $this->getNav();
+
       if(!$page){
+         header("HTTP/1.1 404 Not Found");
          include "View/404.php";
          return;
       }
       include "View/page.php";
    }
+
+   /*
+    *
+    */
    private function getNav()
    {
       //capture de l'output et placement dans l output buufer (ob)
       ob_start();
       $data = $this->repository->getAll();
+      // evite le bug sur le foreach
+      if($data === false){
+         $data=[];
+      }
       include "View/nav.php";
 
       //return du output buffer et nettoyage du buffer
