@@ -41,6 +41,8 @@ class PageController
 
    public function listeAction()
    {
+      $data = (array) $this->repository->getAll();
+      include "../View/admin/index.php";
    }
 /*
  *
