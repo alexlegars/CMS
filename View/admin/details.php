@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Liste des pages</title>
+    <title>Detail de la page</title>
     <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="../bootstrap/css/" rel="stylesheet">
     <link href="../bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
@@ -26,29 +26,23 @@
     </div>
 </nav>
 <div class="container theme-showcase" role="main">
-    <h1>Pages</h1>
-    <a href="/admin/index.php?a=ajouter" style="font-size: 50px">+</a>
+    <h1>DETAILS</h1>
     <table class="table-bordered table-responsive table">
         <tr>
             <th>ID</th>
             <th>Slug</th>
             <th>Titre</th>
-            <th>Action</th>
+            <th>body</th>
+            <th>span_text</th>
         </tr>
-        <?php foreach($data as $page):?>
-            <tr>
-                <td><?=$page->id?></td>
-                <td><?=$page->slug?></td>
-                <td><?=$page->title?></td>
-                <td>
-                    <a href="/admin/index.php?a=details&id=<?=$page->id?>">d</a>
-                    <a href="/admin/index.php?a=modifier&id=<?=$page->id?>">m</a>
-                    <a href="/admin/index.php?a=supprimer&id=<?=$page->id?> class="btn btn-danger"">-</a>
-                </td>
-            </tr>
-        <?php endforeach;?>
+        <tr>
+            <td><?=$page->id?></td>
+            <td><?=$page->slug?></td>
+            <td><?=$page->title?></td>
+            <td><?=htmlentities($page->body)?></td>
+            <td><?=$page->span_text?></td>
+        </tr>
     </table>
-    <a href="/admin/index.php?a=ajouter" style="font-size: 50px">+</a>
 </div>
 </body>
 </html>

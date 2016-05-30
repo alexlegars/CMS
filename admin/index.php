@@ -10,8 +10,8 @@ if (isset($_GET['a'])){
 $page = new \Controller\PageController($pdo);
 
 switch($action){
-    case "detail":
-       // $page->detailsAction();
+    case "details":
+        $page->detailsAction();
         break;
     case "lister":
     default:

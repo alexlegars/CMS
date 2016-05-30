@@ -36,8 +36,22 @@ class PageController
    {
    }
 
-   public function detailsAction()
+    public function detailsAction()
    {
+       if(!isset($_GET['id'])) {
+           throw new \Exception('merci de mettre un id dans URL');
+       }
+           $id = $_GET['id'];
+       $page = $this->repository->findById($id);
+
+       if(!$page){
+           header("HTTP/1.1 404 Not Found");
+           include "View/404.php";
+           return;
+       }
+
+       require "View/admin/details.php";
+
    }
 
    public function listeAction()

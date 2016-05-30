@@ -46,6 +46,30 @@ class PageRepository
         return $stmt->fetchObject();
     }
 
+
+    public function findById($id)
+    {
+        $sql = "
+        SELECT
+          `id`,
+          `slug`,
+          `h1`,
+          `image`,
+          `span_class`,
+          `span_text`,
+          `iframe`,
+          `body`,
+          `title`
+        FROM
+          `page`
+        WHERE
+          `id` = :id
+        ";
+        $stmt = $this->PDO->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        return $stmt->fetchObject();
+    }
     /**
      * @return array liste des slugs et titles de toutes les pages
      */
@@ -65,7 +89,8 @@ class PageRepository
     }
 
 
-    public function putAll()
+   /*
+   public function putAll()
     {
         $uploadimg = 'img/';
         $tempdir = $_FILES['image']['tmp_name'];
@@ -102,4 +127,5 @@ class PageRepository
         $stmt->execute();
         return $this->PDO->lastInsertId();
     }
+   */
 }
