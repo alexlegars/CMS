@@ -10,11 +10,25 @@ if (isset($_GET['a'])){
 $page = new \Controller\PageController($pdo);
 
 switch($action){
-    case "detail":
-       // $page->detailsAction();
+    case "details":
+        try {
+            $page->detailsAction();
+        } catch (\Exception $e){
+            die($e->getMessage());
+        }
         break;
     case "lister":
     default:
         $page->listeAction();
+        break;
+    case "ajouter":
+        $page->ajoutAction();
+        break;
+    case "supprimer":
+        $page->supprimerAction();
+        break;
+    case "modifier":
+        $page->modifierAction();
+        break;
 
 }
