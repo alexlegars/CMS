@@ -92,41 +92,36 @@ class PageRepository
 
    public function putAll()
     {
-        $uploadimg = 'img/';
-        $tempdir = $_FILES['image']['tmp_name'];
-        move_uploaded_file($tempdir, $uploadimg . $_FILES['image']['name']);
 
-        $sql = "INSERT INTO
+        $sql ="
+        INSERT INTO
         `page`
-        (
-            `slug`,
-            `h1`,
-            `span_text`,
-            `span_class`,
-            `body`,
-            `title`,
-            `image`,
-        )
-        VALUES (
-            :slug,
-            :h1,
-            :span_text,
-            :span_class,
-            :body,
-            :title,
-            :image,
-        )
-        ";
+        (id,
+        title,
+        h1,
+        body,
+        span_class,
+        span_text,
+        img,
+        slug)
+        VALUES
+        (null,
+         :title,
+         :h1,
+         :body,
+         :span_class,
+         :span_text,
+         :img,
+         :slug)
+         ";
         $stmt = $this->PDO->prepare($sql);
-
-        $stmt->bindValue(':slug', $_POST["slug"]);
-        $stmt->bindValue(':h1', $_POST["h1"]);
-        $stmt->bindValue(':span_text', $_POST["span_text"]);
-        $stmt->bindValue(':span_class', $_POST["span_class"]);
-        $stmt->bindValue(':body', $_POST["body"]);
-        $stmt->bindValue(':title', $_POST["title"]);
-        $stmt->bindValue(':image', $_FILES['image']['name']);
-
+        $stmt->bindParam(':title', $_POST['title']);
+        $stmt->bindParam(':h1', $_POST['h1']);
+        $stmt->bindParam(':body', $_POST['body']);
+        $stmt->bindParam(':span_class', $_POST['span_class']);
+        $stmt->bindParam(':span_text', $_POST['span_text']);
+        $stmt->bindParam(':img', $_POST['img']);
+        $stmt->bindParam(':slug', $_POST['slug']);
         $stmt->execute();
         header('Location: index.php?a=lister');
     }
