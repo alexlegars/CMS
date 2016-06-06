@@ -20,8 +20,15 @@ switch($action){
     case "lister":
     default:
         $page->listeAction();
+        break;
     case "ajouter":
         $page->ajoutAction();
+        break;
+    case "supprimer":
+        $page->supprimerAction();
+        break;
+    case "modifier":
+        $page->modifierAction();
         break;
 
 }

@@ -27,7 +27,7 @@
 </nav>
 <div class="container theme-showcase" role="main">
     <h1>Pages</h1>
-    <a href="./index.php?a=ajouter" style="font-size: 50px">+</a>
+    <a href="./index.php?a=ajouter" style="font-size: 40px" class="btn btn-success btn-xs">+</a>
     <table class="table-bordered table-responsive table">
         <tr>
             <th>ID</th>
@@ -41,14 +41,14 @@
                 <td><?=$page->slug?></td>
                 <td><?=$page->title?></td>
                 <td>
-                    <a href="./index.php?a=details&id=<?=$page->id?>">d</a>
-                    <a href="./index.php?a=modifier&id=<?=$page->id?>">m</a>
-                    <a href="./index.php?a=supprimer&id=<?=$page->id?>">-</a>
+                    <a href="./index.php?a=details&id=<?=$page->id?>" class="btn btn-primary">details</a>
+                    <a href="./index.php?a=modifier&id=<?=$page->id?>" class="btn btn-warning">modifier</a>
+                    <a href="./index.php?a=supprimer&id=<?=$page->id?>" class="btn btn-danger">delete</a>
                 </td>
             </tr>
         <?php endforeach;?>
     </table>
-    <a href="./index.php?a=ajouter" style="font-size: 50px">+</a>
+    <a href="./index.php?a=ajouter" style="font-size: 40px" class="btn btn-success btn-xs">+</a>
 </div>
 </body>
 </html>

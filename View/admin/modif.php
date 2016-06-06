@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> formulaire d'ajout</title>
+    <title>Details de la page : <?=$page->title?></title>
     <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="../bootstrap/css/" rel="stylesheet">
     <link href="../bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
@@ -26,53 +26,54 @@
     </div>
 </nav>
 <div class="container theme-showcase" role="main">
-    <h1>Ajouter une nouvelle page</h1>
-    <form  method="post" action="#" class="form-horizontal">
+    <h1>Modifier page</h1>
+    <form method="post" class="form-horizontal">
         <div class="form-group">
             <label for="title" class="col-sm-2 control-label">Titre (navigation)</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="title" name="title" placeholder="Titre">
+                <input type="text" class="form-control" id="title" name="title" value="<?=$page->title?>" placeholder="Titre">
             </div>
         </div>
+
         <div class="form-group">
             <label for="h1" class="col-sm-2 control-label">Titre de la page</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="h1" name="h1" placeholder="Titre de la page">
+                <input type="text" class="form-control" id="h1" name="h1" value="<?=$page->h1 ?>" placeholder="Titre de la page">
             </div>
         </div>
 
         <div class="form-group">
             <label for="body" class="col-sm-2 control-label">Description</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="body" name="body" placeholder="Description">
+                <textarea  class="form-control" id="body" name="body" placeholder="Description"><?=$page->body ?></textarea>
             </div>
         </div>
 
         <div class="form-group">
             <label for="span_class" class="col-sm-2 control-label">Classe du span</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="span_class" name="span_class" placeholder="Classe du span">
+                <input type="text" class="form-control" id="span_class" value="<?=$page->span_class ?>" name="span_class" placeholder="Classe du span">
             </div>
         </div>
 
         <div class="form-group">
             <label for="span_text" class="col-sm-2 control-label">Texte du span</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="span_text" name="span_text" placeholder="Texte du span">
+                <input type="text" class="form-control" id="span_text" value="<?=$page->span_text ?>" name="span_text" placeholder="Texte du span">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="image" class="col-sm-2 control-label">Image</label>
+            <label for="imageg" class="col-sm-2 control-label">Image</label>
             <div class="col-sm-10">
-                <input type="file" class="form-control" id="image" name="image" placeholder="URL de l'image">
+                <input type="file" class="form-control" id="image" value="<?=$page->image?>" name="image" placeholder="URL de l'image">
             </div>
         </div>
 
         <div class="form-group">
             <label for="img" class="col-sm-2 control-label">Slug</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="slug" name="slug" placeholder="Slug de la page">
+                <input type="text" class="form-control" id="slug" name="slug" value="<?=$page->slug?>" placeholder="Slug de la page">
             </div>
         </div>
 

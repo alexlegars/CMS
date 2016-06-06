@@ -19,22 +19,36 @@ class PageController
 
    public function ajoutAction()
    {
+
        if(count($_POST) === 0){
-                //formulaire
-               require 'View/admin/ajout.php';
-           } else{
-               // traitement formulaiare
-               // sauvegarde de la nouvelle page
-                $this->repository->putAll();
+           include_once 'View/admin/ajout.php';
+       }else{
+           //traitement formulaire, sauvegarde
+           $this->repository->insertAll();
+           header('Location: index.php?a=lister');
            }
    }
 
    public function supprimerAction()
    {
+       $this->repository->delete();
+       header('Location: index.php?a=lister');
    }
 
    public function modifierAction()
-   {
+   {if(!isset($_GET['id'])) {
+       throw new \Exception('merci de mettre un id dans URL');
+   }
+       $id = $_GET['id'];
+
+       if(count($_POST) === 0){
+           $page = $this->repository->findById($id);
+           require 'View/admin/modif.php';
+       }else{
+           $this->repository->modif();
+           header('Location: index.php?a=lister');
+       }
+
    }
 
     public function detailsAction()
