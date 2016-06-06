@@ -19,13 +19,14 @@ class PageController
 
    public function ajoutAction()
    {
-      /* if(count($_POST) === 0){
-               // formulaire
+       if(count($_POST) === 0){
+                //formulaire
+               require 'View/admin/ajout.php';
            } else{
                // traitement formulaiare
                // sauvegarde de la nouvelle page
+                $this->repository->putAll();
            }
-      */
    }
 
    public function supprimerAction()

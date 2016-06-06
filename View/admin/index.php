@@ -41,14 +41,14 @@
                 <td><?=$page->slug?></td>
                 <td><?=$page->title?></td>
                 <td>
-                    <a href="/admin/index.php?a=details&id=<?=$page->id?>">d</a>
-                    <a href="/admin/index.php?a=modifier&id=<?=$page->id?>">m</a>
-                    <a href="/admin/index.php?a=supprimer&id=<?=$page->id?> class="btn btn-danger"">-</a>
+                    <a href="./index.php?a=details&id=<?=$page->id?>">d</a>
+                    <a href="./index.php?a=modifier&id=<?=$page->id?>">m</a>
+                    <a href="./index.php?a=supprimer&id=<?=$page->id?> class="btn btn-danger"">-</a>
                 </td>
             </tr>
         <?php endforeach;?>
     </table>
-    <a href="/admin/index.php?a=ajouter" style="font-size: 50px">+</a>
+    <a href="/admin/ajout.php" style="font-size: 50px">+</a>
 </div>
 </body>
 </html>

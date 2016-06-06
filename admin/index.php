@@ -11,10 +11,17 @@ $page = new \Controller\PageController($pdo);
 
 switch($action){
     case "details":
-        $page->detailsAction();
+        try {
+            $page->detailsAction();
+        } catch (\Exception $e){
+            die($e->getMessage());
+        }
         break;
     case "lister":
     default:
         $page->listeAction();
+    case "ajouter":
+        $page->ajoutAction();
+        break;
 
 }

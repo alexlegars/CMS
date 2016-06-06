@@ -89,7 +89,7 @@ class PageRepository
     }
 
 
-   /*
+
    public function putAll()
     {
         $uploadimg = 'img/';
@@ -102,6 +102,7 @@ class PageRepository
             `slug`,
             `h1`,
             `span_text`,
+            `span_class`,
             `body`,
             `title`,
             `image`,
@@ -110,6 +111,7 @@ class PageRepository
             :slug,
             :h1,
             :span_text,
+            :span_class,
             :body,
             :title,
             :image,
@@ -120,12 +122,13 @@ class PageRepository
         $stmt->bindValue(':slug', $_POST["slug"]);
         $stmt->bindValue(':h1', $_POST["h1"]);
         $stmt->bindValue(':span_text', $_POST["span_text"]);
+        $stmt->bindValue(':span_class', $_POST["span_class"]);
         $stmt->bindValue(':body', $_POST["body"]);
         $stmt->bindValue(':title', $_POST["title"]);
         $stmt->bindValue(':image', $_FILES['image']['name']);
 
         $stmt->execute();
-        return $this->PDO->lastInsertId();
+        header('Location: index.php?a=lister');
     }
-   */
+
 }
